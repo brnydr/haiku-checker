@@ -9,10 +9,16 @@ describe(`Haiku`, () => {
     expect(newHaiku.line3).toEqual("");
   });
   
-  test('should return the correct number of syllables in the line', () => {
+  test('should return the correct number of words in the line', () => {
     const newHaiku = new Haiku();
-    expect(newHaiku.checkSyllables(newHaiku.line1).length).toEqual(0);
+    expect(newHaiku.returnLineArray(newHaiku.line1).length).toEqual(0);
   });
+
+  test('should return syllable count for line', () => {
+    const newHaiku = new Haiku();
+    let lineArray = newHaiku.returnLineArray(newHaiku.line1);
+    expect(newHaiku.countSyllables(lineArray)).toEqual(0);
+  })
 });
 
 

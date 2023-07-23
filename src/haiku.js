@@ -5,7 +5,7 @@ export default class Haiku {
     this.line3 = "";
   }
 
-  checkSyllables(line){
+  returnLineArray(line){
     let lineArray = [];
     if (line === "") {
       return lineArray;
@@ -14,4 +14,12 @@ export default class Haiku {
       return lineArray;
     }
    }  
+
+   countSyllables(lineArray) {
+    // for (let i = 0; i < lineArray.length; i++){
+
+    // }
+
+   }
+
   }
