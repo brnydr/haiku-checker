@@ -4,4 +4,7 @@ export default class Haiku {
     this.line2 = "";
     this.line3 = "";
   }
+
+  checkSyllables(line){
+  }
 }

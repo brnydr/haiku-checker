@@ -8,4 +8,11 @@ describe(`Haiku`, () => {
     expect(newHaiku.line2).toEqual("");
     expect(newHaiku.line3).toEqual("");
   });
+  
+  test('should return the correct number of syllables in the line', () => {
+    const newHaiku = new Haiku();
+    expect(newHaiku.checkSyllables(newHaiku.line1)).toEqual("0");
+  });
 });
+
+
