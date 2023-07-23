@@ -6,5 +6,11 @@ export default class Haiku {
   }
 
   checkSyllables(line){
+    if (line === "") {
+      return 0
+    } else {
+      let lineArray = line.split();
+      return lineArray.length      
+    }
+    }  
   }
-}

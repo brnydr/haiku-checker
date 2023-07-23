@@ -11,7 +11,7 @@ describe(`Haiku`, () => {
   
   test('should return the correct number of syllables in the line', () => {
     const newHaiku = new Haiku();
-    expect(newHaiku.checkSyllables(newHaiku.line1)).toEqual("0");
+    expect(newHaiku.checkSyllables(newHaiku.line1)).toEqual(0);
   });
 });
 
