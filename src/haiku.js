@@ -5,7 +5,7 @@ export default class Haiku {
     this.line3 = line3;
   }
 
-  returnLineArray(line){
+  returnLineArray(line) {
     let lineArray = [];
     if (line === "") {
       return lineArray;
@@ -13,16 +13,27 @@ export default class Haiku {
       let newArray = line.split(" ");
       console.log(newArray);
       return newArray;
-      }
     }
-   }  
-
-   countSyllables(lineArray) {
-    let 
-    for (let i = 0; i < lineArray.length; i++){
-
-    }
-   }
-   
-
+  }
   
+  syllableCount(word="") {
+     word = word.toLowerCase();                                     //word.downcase!
+     if(word.length <= 3) { return 1; }                             //return 1 if word.length <= 3
+       word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');   //word.sub!(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '')
+       word = word.replace(/^y/, '');                                 //word.sub!(/^y/, '')
+       return word.match(/[aeiouy]{1,2}/g).length;
+    // return 0;
+  }
+
+  countSyllables(lineArray) {
+    let lineSyllableCounter = 0;
+    for (let i = 0; i < lineArray.length; i++) {
+      lineSyllableCounter += syllableCount(/*lineArray[i]*/);
+    }
+    return lineSyllableCounter;
+  }
+}
+
+
+
+
