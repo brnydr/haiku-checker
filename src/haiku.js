@@ -28,7 +28,7 @@ export default class Haiku {
   countSyllables(lineArray) {
     let lineSyllableCounter = 0;
     for (let i = 0; i < lineArray.length; i++) {
-      lineSyllableCounter += syllableCount(/*lineArray[i]*/);
+      lineSyllableCounter += this.syllableCount(lineArray[i]);
     }
     return lineSyllableCounter;
   }

@@ -41,6 +41,13 @@ describe(`Haiku`, () => {
     let syllablesInWord = newHaiku.syllableCount(lineArray[0]);
     expect(newHaiku.syllableCount(lineArray[0])).toEqual(3);
   })
+
+  test('syllable count should return 4 for string "robotics dog"', () => {
+    let newHaiku = new Haiku("robotics dog");
+    let lineArray = newHaiku.returnLineArray(newHaiku.line1);
+    let syllablesInWord = newHaiku.syllableCount(lineArray[0]);
+    expect(newHaiku.countSyllables(lineArray)).toEqual(4);
+  })
 });
 
 
