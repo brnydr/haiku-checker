@@ -22,10 +22,31 @@ describe(`Haiku`, () => {
   }
   )
 
-  test('should return syllable count for line', () => {
+  test('should return 0 syllable count for line when nothing entered for line', () => {
     let newHaiku = new Haiku();
     let lineArray = newHaiku.returnLineArray(newHaiku.line1);
     expect(newHaiku.countSyllables(lineArray)).toEqual(0);
+  })
+  
+  test('syllable count should return 0 for empty string', () => {
+    let newHaiku = new Haiku("car");
+    let lineArray = newHaiku.returnLineArray(newHaiku.line1);
+    let syllablesInWord = newHaiku.syllableCount(lineArray[0]);
+    expect(newHaiku.syllableCount(lineArray[0])).toEqual(1);
+  })
+
+  test('syllable count should return 3 for string "robotics"', () => {
+    let newHaiku = new Haiku("robotics");
+    let lineArray = newHaiku.returnLineArray(newHaiku.line1);
+    let syllablesInWord = newHaiku.syllableCount(lineArray[0]);
+    expect(newHaiku.syllableCount(lineArray[0])).toEqual(3);
+  })
+
+  test('syllable count should return 4 for string "robotics dog"', () => {
+    let newHaiku = new Haiku("robotics dog");
+    let lineArray = newHaiku.returnLineArray(newHaiku.line1);
+    let syllablesInWord = newHaiku.syllableCount(lineArray[0]);
+    expect(newHaiku.countSyllables(lineArray)).toEqual(4);
   })
 });
 
